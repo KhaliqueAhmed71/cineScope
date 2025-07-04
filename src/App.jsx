@@ -8,7 +8,7 @@ function App() {
       image: aliImg,
       name: "Ali Raza",
       role: "Web Developer",
-      bio: "Coding with coffee ☕ & passion 💻",
+      bio: "Coding with coffee and passion ",
     },
     {
       image: aliImg,

@@ -1,4 +1,4 @@
-// src/ProfileCard.jsx
+
 
 export default function ProfileCard({ image, name, role, bio }) {
   return (
