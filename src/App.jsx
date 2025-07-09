@@ -1,41 +1,29 @@
-import ProfileCard from "./ProfileCard";
-import aliImg from './assets/aliRaza.png';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './assets/HomePage';
+import MovieDetails from './assets/MovieDetails';
+import WatchList from './assets/WatchList';
+import Navbar from './assets/Navbar';
+import Movies from './assets/Movies';
+import TVShows from './assets/TVShows';
 
+import SearchResults from './assets/SearchResults';
+import './index.css'
 
-function App() {
-  const users = [
-    {
-      image: aliImg,
-      name: "Ali Raza",
-      role: "Web Developer",
-      bio: "Coding with coffee and passion ",
-    },
-    {
-      image: aliImg,
-      name: "Fida Khoso",
-      role: "UI/UX Designer",
-      bio: "Design is not just what it looks like.",
-    },
-    {
-      image: aliImg,
-      name: "Bilal Ahmed",
-      role: "Backend Engineer",
-      bio: "Loves building scalable APIs.",
-    },
-  ];
-
+const App = () => {
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
-        Meet Our Team
-      </h1>
-      <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {users.map((user, idx) => (
-          <ProfileCard key={idx} {...user} />
-        ))}
-      </div>
+    <div className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white min-h-screen font-sans">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/movie/:id" element={<MovieDetails />} />
+        <Route path="/watchlist" element={<WatchList />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/tv" element={<TVShows />} />
+        <Route path="/search" element={<SearchResults />} />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;
